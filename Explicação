@@ -1,0 +1,56 @@
+#Explicando cada parte do código
+1. Importação das Bibliotecas:
+-> Análise dos dados (Pandas), Visualização (Matplotlib e Seaborn), e Machine learning (Scikit-learn).
+
+2. Carregar o Dataset:
+-> Carregar o dataset que será utilizado para análise e construção do modelo.
+
+3. Exibir Informações Básicas do Dataset:
+-> Entender a estrutura do dataset, ver as primeiras linhas, verificar os tipos de dados e as estatísticas descritivas.
+
+4. Função para Criar Histogramas:
+-> Criar histogramas para visualizar a distribuição das variáveis numéricas no dataset.
+
+def plot_histograms(df, columns, n_rows, n_cols):                           #Define uma nova função
+    fig, axs = plt.subplots(n_rows, n_cols, figsize=(16, 10))               #Cria uma grade de subplots e define o tamanho da figura
+    axs = axs.flatten()                                                     #Converte a matriz de eixos em um array unidimensional
+    for i, col in enumerate(columns):                                       #Itera sobre a lista de colunas.
+        axs[i].hist(df[col], bins=30, color='blue', alpha=0.7)              #Cria um histograma e define o número de intervalos (bins).
+        axs[i].set_title(col)                                               #Define o título do subplot como o nome da coluna
+    plt.tight_layout()                                                      #Ajusta automaticamente os subplots
+    plt.show()                                                              #Exibe a figura
+
+5. Criar Histogramas das Colunas Numéricas:
+-> Visualizar a distribuição das variáveis numéricas.
+
+6. Preparar os Dados:
+-> Separar as variáveis independentes (features) da variável dependente (target) que queremos prever.
+
+7. Dividir os Dados em Conjunto de Treino e Teste: 
+-> Dividir o dataset em um conjunto de treino e um conjunto de teste para avaliar o modelo. 20% dos dados serão usados para teste.
+
+8. Treinar o Modelo Random Forest:
+-> Treinar um modelo Random Forest com 100 árvores.
+
+9. Avaliar o Modelo:
+-> Fazer previsões com o modelo treinado no conjunto de teste.
+
+10. Relatório de Classificação: 
+-> Gerar um relatório com métricas de avaliação do modelopara entender a performance do modelo. Percebe-se que a perfomance está boa.
+
+11. Matriz de Confusão:
+-> Calcular e exibir a matriz de confusão para visualizar o desempenho do modelo.
+
+12. Importância das Features:
+-> Identificar quais variáveis (features) são mais importantes para o modelo na previsão do diagnóstico de câncer.
+Age (Idade)
+Gender (Gênero)
+BMI (Índice de Massa Corporal)
+Smoking (Hábito de fumar)
+GeneticRisk (Risco genético)
+PhysicalActivity (Atividade física)
+AlcoholIntake (Consumo de álcool)
+CancerHistory (Histórico de câncer)
+
+13. Plotar a Matriz de Confusão:
+-> Visualizar a matriz de confusão como um mapa de calor para facilitar a interpretação dos resultados.
