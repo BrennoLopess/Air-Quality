@@ -1,4 +1,4 @@
-    #Cancêr Prediction
+    #Cancer Prediction
   Este projeto tem como objetivo prever o diagnóstico de câncer utilizando um modelo de Random Forest. O dataset utilizado contém informações sobre pacientes, incluindo idade, índice de massa corporal (BMI), atividade física, consumo de álcool, gênero, histórico de tabagismo, risco genético e histórico familiar de câncer.
    
     #COLUNAS
